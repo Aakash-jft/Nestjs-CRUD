@@ -1,10 +1,11 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Res } from '@nestjs/common';
 import { data } from 'src/data';
 
 
 @Injectable()
 export class UsersService {
-  getData(): {id?: number;email:string; name: string;type:string; job: string; salary: number}[] {
+  getData(req): {id?: number;email:string; name: string;type:string; job: string; salary: number}[] {
+    console.log(req.user,"controller")
     return data;
   }
 
